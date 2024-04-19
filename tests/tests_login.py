@@ -9,7 +9,7 @@ from pages_POMs.login import LoginPage
 from pages_POMs.main import MainPage
 
 
-class TestLogin(unittest.TestCase):
+class TestsLogin(unittest.TestCase):
 
     def setUp(self) -> None:
         self.driver = webdriver.Chrome()

@@ -11,7 +11,7 @@ from pages_POMs.product_page import GwenDrawstringBikeShort
 from pages_POMs.cart import Cart
 
 
-class TestBuyMoreYoga(unittest.TestCase):
+class TestsBuyMoreYogaProducts(unittest.TestCase):
 
     def setUp(self) -> None:
         self.driver = webdriver.Chrome()
