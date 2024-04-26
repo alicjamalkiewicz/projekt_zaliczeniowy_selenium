@@ -7,7 +7,7 @@ class MainPage(BasePage):
     def __init__(self, driver):
         self.driver = driver
         self.search_field_selector = (By.ID, "search")
-        self.search_button_selector = (By.CLASS_NAME, "action search")
+        self.search_button_selector = (By.XPATH, "//button[@type='submit' and @title='Search']")
         self.sign_in_selector = (By.CSS_SELECTOR, "a[href='https://magento.softwaretestingboard.com/customer/account/login/referer/aHR0cHM6Ly9tYWdlbnRvLnNvZnR3YXJldGVzdGluZ2JvYXJkLmNvbS8%2C/']")
         self.register_selector = (By.NAME, "Create an Account")
         self.my_cart_link = (By.CLASS_NAME, "action showcart")
