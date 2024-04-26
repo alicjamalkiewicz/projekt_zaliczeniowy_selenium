@@ -16,3 +16,6 @@ class SearchResultPage(BasePage):
     def check_if_product_not_found_message_shown(self):
         error_message = self.driver.find_element(*self.product_not_found_error).text
         assert error_message == "Your search returned no results."
+
+    def tearDown(self):
+        self.driver.quit()

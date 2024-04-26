@@ -61,6 +61,5 @@ class TestsBuyMoreYogaProducts(unittest.TestCase):
         time.sleep(2)
         assert self.cart.get_single_product_price() * updated_quantity == self.cart.get_multiple_products_price()
 
-
-if __name__ == '__main__':
-    unittest.main()
+    def tearDown(self):
+        self.driver.quit()

@@ -33,5 +33,7 @@ class TestsSearchProducts(unittest.TestCase):
         time.sleep(1.5)
         self.search_product_page.check_if_product_not_found_message_shown()
 
+    def tearDown(self):
+        self.driver.quit()
 
 
