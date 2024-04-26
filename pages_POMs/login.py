@@ -23,13 +23,17 @@ class LoginPage(BasePage):
         time.sleep(1.5)
 
     def check_if_alert_appears(self):
-        self.driver.find_element(*self.incorrect_login_alert_box_selector)
+        error_message = self.driver.find_element(*self.incorrect_login_alert_box_selector).text
+        assert error_message == "The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later."
 
     def check_if_email_alert_appears(self):
-        self.driver.find_element(*self.incorrect_email_alert_box_selector)
+        error_message = self.driver.find_element(*self.incorrect_email_alert_box_selector).text
+        assert error_message == "Please enter a valid email address (Ex: johndoe@domain.com)."
 
     def check_if_password_required_alert_appears(self):
-        self.driver.find_element(*self.password_required_alert_box_selector)
+        error_message = self.driver.find_element(*self.password_required_alert_box_selector).text
+        assert error_message == "This is a required field."
 
     def check_if_email_required_alert_appears(self):
-        self.driver.find_element(*self.email_required_alert_box_selector)
+        error_message = self.driver.find_element(*self.email_required_alert_box_selector)
+        assert error_message == "This is a required field."

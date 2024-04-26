@@ -23,11 +23,13 @@ class TestsLogin(unittest.TestCase):
     def test_successful_login(self):
         self.main_page.navigate_to_login()
         self.login_page.login("test@grr.la", "Testtest123")
+        time.sleep(3)
         self.account_page.check_if_logged_in()
 
     def test_wrong_password(self):
         self.main_page.navigate_to_login()
         self.login_page.login("test@grr.la", "test1234")
+        time.sleep(3)
         self.login_page.check_if_alert_appears()
 
     def test_no_password(self):

@@ -9,4 +9,5 @@ class AccountPage(BasePage):
         self.account_tab_selector = (By.CLASS_NAME, "logged-in")
 
     def check_if_logged_in(self):
-        self.driver.find_element(*self.account_tab_selector)
+        signed_in = self.driver.find_element(*self.account_tab_selector).text
+        assert signed_in == 'Welcome, test test!'
